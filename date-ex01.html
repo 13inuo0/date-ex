@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>현재시각 : <span class="display">
+        <!-- js출력 -->
+    </span></p>
+    <script>
+        function displayNow(){
+            const now = new Date()
+            console.log(now);
+            const currentTime = now.toLocaleTimeString()
+            console.log(currentTime);
+            const display = document.querySelector(".display")
+            display.innerHTML = `${currentTime}`
+        }
+        setInterval(displayNow, 1000)
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // map()
+      const numbers = [1, 2, 3, 4, 5];
+      //   map 새로운 배열을 리턴 - 결과물을 반환할 때 주로 사용(그 결과를 필요하면 변수에 담아 쓰는 것을 추천)
+      // foreach는 매개변수에담아 사용 불가
+      // map은 새로운 결과물을 반환할 수 있다.
+      // const double = numbers.map(function(){})
+      // const double = numbers.map((n)=>{
+      //     console.log(n);
+      //     })
+      const doubled = numbers.map((n) => {
+        return n * 2;
+      });
+
+      console.log(doubled);
+      console.log(numbers);
+      
+
+      //  forEach는 반환만 하고 끝남 새배열을 반환이 안됨, 배열을 돌려서 바로출력
+      numbers.forEach((n) => {
+        console.log(n);
+      });
+    </script>
+  </body>
+</html>

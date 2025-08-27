@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date예제</title>
+    <style>
+        .product{
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>상품리스트</h1>
+    <div id="product-list">
+      <!-- js출력 -->
+      <!-- <div class="product">
+            <h3>노트북</h3>
+            <p>등록일 : </p>
+         </div> -->
+    </div>
+    <script>
+      const products = [
+        { name: "노트북", date: new Date(2025, 1, 15) },
+        { name: "핸드폰", date: new Date(2025, 1, 16) },
+      ];
+      const productList = document.querySelector("#product-list");
+      //   products.forEach(function (product) {
+      //     // console.log(product);
+      //     productList.innerHTML += `
+      //         <div class="product">
+      //         <h3>${product.name}</h3>
+      //         <p>등록일 : ${product.date.toLocaleDateString} </p>
+      //      </div>`;
+      //   });
+
+      productList.innerHTML = products
+        .map(function (product) {
+          return `
+            <div class="product">
+            <h3>${product.name}</h3>
+            <p>등록일 : ${product.date.toLocaleDateString()} </p>
+            </div>
+      `;
+        })
+        .join(""); //새로운 배열이 변환 => join() 문자열 합치기
+    </script>
+  </body>
+</html>
