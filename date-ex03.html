@@ -11,11 +11,37 @@
       <h2>날짜 선택 및 기록</h2>
       <form class="date-form">
         <label for="date">날짜 선택 :</label>
-        <input type="date">
+        <input type="date" id="date" required />
+        <!-- required = 경고 -->
+        <button type="submit">기록하기</button>
       </form>
+      <div class="display">
+        <!-- js출력 -->
+        <!-- <p><strong>선택된 날짜:</strong><br>
+        (기록된 시간 :)
+        </p> -->
+      </div>
     </div>
     <script>
-
+      const form = document.querySelector(".date-form");
+      const display = document.querySelector(".display");
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        // console.log("제출");
+        // const selectedDate = document.querySelector("#date").value
+        // console.log(selectedDate);
+        const selectedDate = new Date(document.querySelector("#date").value);
+        // console.log(selectedDate);
+        const formDate = selectedDate.toLocaleDateString();
+        console.log(formDate);
+        // const formTime = selectedDate.toLocaleTimeString()
+        // console.log(formTime);
+        const now = new Date().toLocaleString();
+        console.log(now);
+        display.innerHTML += `         <p><strong>선택된 날짜: ${formDate}</strong><br>
+        (기록된 시간 :${now})
+        </p>`;
+      });
     </script>
   </body>
 </html>
